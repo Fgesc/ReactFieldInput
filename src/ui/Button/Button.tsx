@@ -3,14 +3,14 @@ import styles from './style.module.css';
 
 
 type ButtonProps = {
-  onClick: () => void; 
-  children?: ReactNode;
-  type?: string;
-  className?: string;
+    onClick: () => void; 
+    children?: ReactNode;
+    type?: string;
+    className?: string;
 };
 
 export const Button = ({children, onClick, className}: ButtonProps) => {
-  return (
-    <button type='button' onClick={onClick}  className={`${styles.button}  ${className}`.trim()}>{children}</button>
-  );
+    return (
+        <button type='button' onClick={onClick}  className={`${styles.button}  ${className}`.trim()}>{children}</button>
+    );
 };

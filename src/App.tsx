@@ -1,4 +1,4 @@
-import { FieldCase } from './components/FolderCase'
+import { FieldCase } from './components/FieldCase'
 import './App.css'
 
 
@@ -6,14 +6,14 @@ import './App.css'
 
 function App() {
 
-  return (
-    <>
-      <div className="form-wrapper">
-          <FieldCase />
-      </div>
+    return (
+        <>
+            <div className="form-wrapper">
+                <FieldCase />
+            </div>
 
-    </>
-  )
+        </>
+    )
 }
 
 export default App
