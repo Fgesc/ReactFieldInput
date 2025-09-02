@@ -21,17 +21,18 @@ export const FieldCase  = () => {
         if (!property.trim()) {
             setMeaning('');
             return
-    }
-    if (!meaning.trim()) {
-        setField({ ...field, property : ''});
-        }
-        setField({ ...field, [property] : meaning})
+        };
+        setField(prev => ({ ...prev, [property] : meaning}));
         setProperty('');
         setMeaning('');
     };
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        handleClick();
+    };
 
     return<>
-        <form onSubmit={(e) => { e.preventDefault(); handleClick();}}> 
+        <form onSubmit={handleSubmit}> 
             <Input
                 id="property"
                 value={property}
@@ -44,7 +45,7 @@ export const FieldCase  = () => {
                 onChange={handleMeaningChange}
                 label="Значение поля:"
             />
-            <Button type="button" className={styles.btn} onClick ={handleClick}>Создать поле в объекте</Button>
+            <Button type="submit" className={styles.btn}>Создать поле в объекте</Button>
         </form>
         <div>
             {`Объект: ${JSON.stringify(field, null, 2)}`}
